@@ -21,7 +21,7 @@ body{
     height: calc(100% - 10vh);
     object-fit: cover; 
     transition: .5s;
-    mix-blend-mode: screen;
+    /* mix-blend-mode: screen; */
   }
   
   .box > span {
