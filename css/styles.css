@@ -6,30 +6,23 @@ body{
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    height: 400px;
+    height: 50vh;
+    position: relative;
   }
   
   .box {
-    flex: 1;
+    flex: 1 1;
     overflow: hidden;
     transition: .5s;
-    line-height: 0;
+    position: relative;
+    display: inline-block;
   }
-  
+
   .box > img {
     width: 200%;
-    height: calc(100% - 10vh);
+    height: 100%;
     object-fit: cover; 
     transition: .5s;
-    /* mix-blend-mode: screen; */
-  }
-  
-  .box > span {
-    font-size: 3.8vh;
-    display: block;
-    text-align: center;
-    height: 10vh;
-    line-height: 2.6;
   }
   
   .box:hover { flex: 1 1 50%; }
@@ -37,4 +30,28 @@ body{
     width: 100%;
     height: 100%;
   }
-   
+
+  .box:hover .text {
+    opacity: 1;
+  }
+
+  .box .text {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    vertical-align: middle;
+    font-size: 3.1vmax;
+    color: white;
+    white-space: initial;
+    text-overflow: ellipsis;
+  }   
