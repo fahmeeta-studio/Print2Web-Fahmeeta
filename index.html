@@ -6,69 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'/>
 
     <title>Website title</title>
   </head>
-  <body>
-    <div class="container">
-      <div class="box">
-        <img src="img/hair-oiling.png">  
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
+    <script type="text/javascript">
+    var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var x = "black",
+        y = 2;
+    
+    function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+        w = canvas.width;
+        h = canvas.height;
+    
+        canvas.addEventListener("mousemove", function (e) {
+            findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+            findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+            findxy('out', e)
+        }, false);
+    }
+    
+    function draw() {
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.strokeStyle = x;
+        ctx.lineWidth = y;
+        ctx.stroke();
+        ctx.closePath();
+    }
+    
+    function findxy(res, e) {
+        if (res == 'down') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.offsetLeft;
+            currY = e.clientY - canvas.offsetTop;
+    
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = x;
+                ctx.fillRect(currX, currY, 2, 2);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (res == 'up' || res == "out") {
+            flag = false;
+        }
+        if (res == 'move') {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.clientX - canvas.offsetLeft;
+                currY = e.clientY - canvas.offsetTop;
+                draw();
+            }
+        }
+    }
+    </script>
+    <body onload="init()">
+      <div>
+        <canvas class="container" id="can" width="1920" height="1080"></canvas>
+        <div>
+          <div class="layer1">
+            <div class="wrapper">
+              <div class="one">Hair Oiling</div>
+              <div>
+                <img src="img/edited.png" width="700">
+              </div>
+              <div class="two">Leave oil on hair for 30 minutes or overnight.</div>
+              <div class="three">The oil should be applied to every part of the scalp and then oil residue that may be left on the hands can be brushed through the hair for extra shine.</div>
+              <div>
+                <div class="four">How to</div>
+                <div class="four">oil your</div>
+                <div class="five">hair</div>
+              </div>
+              <div class="six">You can oil when your hair is damp or dry, but your hair and scalp have to be clean.</div>
+              <div class="seven">Section hair into 4 parts.</div>
+              <div class="eight">Start from the back of the head and then move forward in small circular movements. You want to apply the oil on the scalp, never on the hair.</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="box">
-        <img src="img/hair-oiling-2.png">
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-      <div class="box">
-        <img src="img/hair-oiling-3.jpeg">
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-      <div class="box">
-        <img src="img/hair-oiling-4.png">
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="box">
-        <img src="img/hair-oiling-5.jpeg">
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-      <div class="box">
-        <img src="img/hair-oiling-6.jpeg">
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-      <div class="box">
-        <img src="img/hair-oiling-7.jpeg">
-        <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-      <div class="box">
-        <img src="img/hair-oiling-8.jpeg">
-                <div class="text">
-          <div>Dal mese di gennaio 2020, il COVID-19 si è progressivamente diffuso al di fuori della Cina, dove si è registrato il primo focolaio di contagio.
-            L’andamento della diffusione del contagio è monitorata dalla Johns Hopkins University, che riporta i dati su una mappa aggiornata in tempo pressoché reale.</div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+    </body>
+    </html>

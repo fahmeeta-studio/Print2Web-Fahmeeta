@@ -1,57 +1,91 @@
-
 body{
-    background-color: rgb(255, 174, 0);
+  overflow: hidden;
 }
-  .container {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    height: 50vh;
-    position: relative;
-  }
+
+.layer1 {
+  z-index: 3;
+}
+
+.layer2 {
+  z-index: 4;
+  color: orange;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 6px;
+  grid-row-gap: 250px;
   
-  .box {
-    flex: 1 1;
-    overflow: hidden;
-    transition: .5s;
-    position: relative;
-    display: inline-block;
-  }
+}
+.one {
+  font-family: 'Open Sans';
+  font-size: 150px;
+  text-shadow: 10px 10px #ff9900;
+}
+.two {
+  font-family: 'Open Sans';
+  font-size: 25px;
+  padding-top: 10px;
+  align-self: end;
+  text-shadow: 10px 10px #ff9900;
+}
+.three {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  padding-top: 10px;
+  text-shadow: 10px 10px #ff9900;
+}
+.four {
+  font-family: 'Open Sans';
+  font-size: 80px;
+  text-shadow: 10px 10px #ff9900;
+}
+.five {
+  position:relative;
+  font-family: 'Open Sans';
+  font-size: 120px;
+  text-shadow: 10px 10px #ff9900;
+}
 
-  .box > img {
-    width: 200%;
-    height: 100%;
-    object-fit: cover; 
-    transition: .5s;
-  }
-  
-  .box:hover { flex: 1 1 50%; }
-  .box:hover > img {
-    width: 100%;
-    height: 100%;
-  }
+.six {
+  font-family: 'Open Sans';
+  font-size: 20px;
+  text-shadow: 10px 10px #ff9900;
+}
 
-  .box:hover .text {
-    opacity: 1;
-  }
+.seven {
+  font-family: 'Open Sans';
+  font-size: 30px;
+  text-shadow: 10px 10px #ff9900;
+}
 
-  .box .text {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    padding-top: 100px;
-    padding-right: 100px;
-    padding-bottom: 100px;
-    padding-left: 100px;
-    vertical-align: middle;
-    font-size: 3.1vmax;
-    color: white;
-    white-space: initial;
-    text-overflow: ellipsis;
-  }   
+.eight {
+  font-family: 'Open Sans';
+  font-size: 20px;
+  transform: rotate(-45deg);
+  text-shadow: 10px 10px #ff9900;
+}
+
+.container {
+  z-index: 1;
+  position: absolute;
+}
+
+img {
+  transform: rotate(-180deg);
+}
+
+
+@media screen and (max-width: 768px){
+    body{
+       overflow-y: scroll;
+    }
+    .wrapper{
+      grid-row-gap:10px;
+    }
+
+    .eight {
+      transform: rotate(0deg);
+    }
+}
