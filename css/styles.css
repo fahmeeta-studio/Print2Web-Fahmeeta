@@ -1,91 +1,104 @@
 body{
   overflow: hidden;
-}
-
-.layer1 {
-  z-index: 3;
-}
-
-.layer2 {
-  z-index: 4;
-  color: orange;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-column-gap: 6px;
-  grid-row-gap: 250px;
+  overflow-y: scroll;
+  background-image: url("img/edited.png");
+  background-repeat: no-repeat;
+  background-size: 700px;
+  background-position: top;
   
 }
-.one {
-  font-family: 'Open Sans';
-  font-size: 150px;
-  text-shadow: 10px 10px #ff9900;
+.wrapper {
+  /*max-width: 1200px;*/
+  margin: 0 auto;
+  position: absolute;
 }
-.two {
-  font-family: 'Open Sans';
-  font-size: 25px;
-  padding-top: 10px;
-  align-self: end;
-  text-shadow: 10px 10px #ff9900;
-}
-.three {
-  font-family: 'Open Sans';
-  font-size: 15px;
-  padding-top: 10px;
-  text-shadow: 10px 10px #ff9900;
-}
-.four {
-  font-family: 'Open Sans';
-  font-size: 80px;
-  text-shadow: 10px 10px #ff9900;
-}
-.five {
-  position:relative;
-  font-family: 'Open Sans';
-  font-size: 120px;
-  text-shadow: 10px 10px #ff9900;
-}
-
-.six {
-  font-family: 'Open Sans';
-  font-size: 20px;
-  text-shadow: 10px 10px #ff9900;
-}
-
-.seven {
-  font-family: 'Open Sans';
-  font-size: 30px;
-  text-shadow: 10px 10px #ff9900;
-}
-
-.eight {
-  font-family: 'Open Sans';
-  font-size: 20px;
-  transform: rotate(-45deg);
-  text-shadow: 10px 10px #ff9900;
-}
-
 .container {
   z-index: 1;
   position: absolute;
 }
 
-img {
-  transform: rotate(-180deg);
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 50vh;
+}
+
+.column {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
+}
+
+.one {
+  font-family: 'Open Sans';
+  font-size: 10vw;
+  text-shadow: 10px 10px #ff9900;
+  transition: .5s;
+}
+
+.two {
+  font-family: 'Open Sans';
+  font-size: 2.5vw;
+  padding-top: 10px;
+  text-shadow: 10px 10px #ff9900;
+  text-align: center;
+  margin-top: 250px;
+}
+
+.three {
+  font-family: 'Open Sans';
+  font-size: 1.5vw;
+  padding-top: 10px;
+  text-shadow: 10px 10px #ff9900;
+}
+
+.four {
+  font-family: 'Open Sans';
+  font-size: 5vw;
+  text-shadow: 10px 10px #ff9900;
+  margin-top: calc(100vh - 85vh);
+}
+
+.four-second {
+  font-family: 'Open Sans';
+  font-size: 5vw;
+  text-shadow: 10px 10px #ff9900;
+}
+
+.five {
+  position:relative;
+  font-family: 'Open Sans';
+  font-size: 10vw;
+  text-shadow: 10px 10px #ff9900;
+  position: relative;
+  position: absolute;
+}
+
+.six {
+  font-family: 'Open Sans';
+  font-size: 2.5vw;
+  text-shadow: 10px 10px #ff9900;
+  margin-top: calc(100vh - 80vh);
+}
+
+.seven {
+  font-family: 'Open Sans';
+  font-size: 5vw;
+  text-shadow: 10px 10px #ff9900;
+  position: relative;
+  margin-top: calc(100vh - 80vh);
 }
 
 
-@media screen and (max-width: 768px){
-    body{
-       overflow-y: scroll;
-    }
-    .wrapper{
-      grid-row-gap:10px;
-    }
-
-    .eight {
-      transform: rotate(0deg);
-    }
+.eight {
+  font-family: 'Open Sans';
+  font-size: 2.5vw;
+  transform: rotate(-15deg);
+  text-shadow: 10px 10px #ff9900;
+  background-color: aqua;
 }
