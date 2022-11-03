@@ -1,104 +1,237 @@
 body{
   overflow: hidden;
   overflow-y: scroll;
-  background-image: url("img/edited.png");
-  background-repeat: no-repeat;
-  background-size: 700px;
-  background-position: top;
-  
-}
-.wrapper {
-  /*max-width: 1200px;*/
-  margin: 0 auto;
-  position: absolute;
-}
-.container {
-  z-index: 1;
-  position: absolute;
+  background: url("img/edited.png") no-repeat top, url("img/scribble.png");
+  /* background-repeat: no-repeat;*/
+  background-size: 700px, cover;
+  /*background-position: top; */
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 50vh;
-}
-
-.column {
-  flex-basis: 100%;
-}
-
+/* Intended for desktop style */
 @media screen and (min-width: 800px) {
+
+  html {
+    cursor: url('img/pencil-solid2.png'), auto;
+  }
+   
+  .button-box{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    text-align: right;
+    z-index:100;
+  }
+
+  .button-column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+
+  button{
+    align-self: flex-end;
+    background-color: #ff9900;
+    font-family: 'Open Sans';
+    font-size: 30px;
+  }
+
+  .container {
+    z-index: -11;
+    position: absolute;
+  }
+
+  .wrapper {
+    z-index: -111;
+    margin: 0 auto;
+    position: absolute;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+  }
+  
   .column {
-    flex: 1;
+    flex-basis: 100%;
+  }
+  
+  .one {
+    font-family: 'Open Sans';
+    font-size: 150px;
+    text-shadow: 10px 10px #ff9900;
+  }
+  
+  .two {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    padding-top: 10px;
+    text-shadow: 10px 10px #ff9900;
+    text-align: center;
+    margin-top: 250px;
+  }
+  
+  .three {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    padding-top: 10px;
+    text-shadow: 10px 10px #ff9900;
+  }
+  
+  .four {
+    font-family: 'Open Sans';
+    font-size: 80px;
+    text-shadow: 10px 10px #ff9900;
+    margin-top: calc(100vh - 78vh);
+  }
+  
+  .four-second {
+    font-family: 'Open Sans';
+    font-size: 80px;
+    text-shadow: 10px 10px #ff9900;
+  }
+  
+  .five {
+    font-family: 'Open Sans';
+    font-size: 150px;
+    text-shadow: 10px 10px #ff9900;
+  }
+  
+  .six {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    text-shadow: 10px 10px #ff9900;
+    margin-top: calc(100vh - 60vh);
+  }
+  
+  .seven {
+    font-family: 'Open Sans';
+    font-size: 60px;
+    text-shadow: 10px 10px #ff9900;
+    position: relative;
+    margin-top: calc(100vh - 65vh);
+  }
+  
+  
+  .eight {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    transform: rotate(-15deg);
+    text-shadow: 10px 10px #ff9900;
+    /* background-color: aqua; */
+    margin-top: calc(100vh - 70vh);
   }
 }
 
-.one {
-  font-family: 'Open Sans';
-  font-size: 10vw;
-  text-shadow: 10px 10px #ff9900;
-  transition: .5s;
-}
+/* Intended for mobile style */
+@media only screen and (max-width: 800px) {
+     
+  .button-box{
+    position: absolute;
+    top: 75%;
+    right: 0;
+    text-align: right;
+    z-index:100;
+  }
 
-.two {
-  font-family: 'Open Sans';
-  font-size: 2.5vw;
-  padding-top: 10px;
-  text-shadow: 10px 10px #ff9900;
-  text-align: center;
-  margin-top: 250px;
-}
+  .button-column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+  }
 
-.three {
-  font-family: 'Open Sans';
-  font-size: 1.5vw;
-  padding-top: 10px;
-  text-shadow: 10px 10px #ff9900;
-}
+  button{
+    align-self: flex-end;
+    background-color: #ff9900;
+    font-family: 'Open Sans';
+    font-size: 30px;
+  }
 
-.four {
-  font-family: 'Open Sans';
-  font-size: 5vw;
-  text-shadow: 10px 10px #ff9900;
-  margin-top: calc(100vh - 85vh);
-}
+  .container {
+    z-index: -11;
+    position: absolute;
+  }
 
-.four-second {
-  font-family: 'Open Sans';
-  font-size: 5vw;
-  text-shadow: 10px 10px #ff9900;
-}
+  .wrapper {
+    z-index: -111;
+    margin: 0 auto;
+    position: absolute;
+  }
 
-.five {
-  position:relative;
-  font-family: 'Open Sans';
-  font-size: 10vw;
-  text-shadow: 10px 10px #ff9900;
-  position: relative;
-  position: absolute;
-}
+  .one {
+    font-family: 'Open Sans';
+    font-size: 20vw;
+    text-shadow: 10px 10px #ff9900;
+    margin-top: 250px;  
+  }
+  
+  .two {
+    font-family: 'Open Sans';
+    font-size: 5vw;
+    padding: 2vh;
+    padding-top: 3vh;
+    text-shadow: .8vw .8vw #ff9900;
+    text-align: center;
+  }
+  
+  .three {
+    font-family: 'Open Sans';
+    font-size: 5vw;
+    padding: 2vh;
+    text-shadow: .8vw .8vw #ff9900;
+  }
+  
+  .four {
+    font-family: 'Open Sans';
+    font-size: 10vw;
+    text-shadow: 10px 10px #ff9900;
+    padding-top: 3vh;
+  }
+  
+  .four-second {
+    font-family: 'Open Sans';
+    font-size: 10vw;
+    text-shadow: 10px 10px #ff9900;
+  }
+  
+  .five {
+    font-family: 'Open Sans';
+    font-size: 20vw;
+    text-shadow: 10px 10px #ff9900; 
+  }
+  
+  .six {
+    font-family: 'Open Sans';
+    font-size: 5vw;
+    text-shadow: .8vw .8vw #ff9900;
+    padding: 2vh;
+    padding-top: 3vh;
+  }
+  
+  .seven {
+    font-family: 'Open Sans';
+    font-size: 5vw;
+    text-shadow: .8vw .8vw #ff9900;
+    position: relative;
+    padding: 2vh;
+  }
+  
+  
+  .eight {
+    font-family: 'Open Sans';
+    font-size: 5vw;
+    transform: rotate(0deg);
+    text-shadow: .8vw .8vw #ff9900;
+    padding: 2vh;
+  }
 
-.six {
-  font-family: 'Open Sans';
-  font-size: 2.5vw;
-  text-shadow: 10px 10px #ff9900;
-  margin-top: calc(100vh - 80vh);
-}
-
-.seven {
-  font-family: 'Open Sans';
-  font-size: 5vw;
-  text-shadow: 10px 10px #ff9900;
-  position: relative;
-  margin-top: calc(100vh - 80vh);
-}
-
-
-.eight {
-  font-family: 'Open Sans';
-  font-size: 2.5vw;
-  transform: rotate(-15deg);
-  text-shadow: 10px 10px #ff9900;
-  background-color: aqua;
+  .column {
+    flex-basis: 100%;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
 }
